@@ -1,0 +1,2 @@
+This master thesis will consist of a study of Clifford (or Geometric) Algebra's and their applications within the field of Machine Learning. As a first attempt, we will explore the possibility of integrating Clifford algebras into 
+the framework of optimal transport. Optimal transport methods are commonly used in imaging applications. With the extension to the Clifford algebra we wish to capture transport of directional data such as lines and crossed lines.
