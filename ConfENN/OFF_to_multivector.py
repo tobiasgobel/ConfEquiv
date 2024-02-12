@@ -70,12 +70,22 @@ metric = [1,1,1]
 
 # Example usage
 if __name__ == "__main__":
-    file_path = 'Non-rigidSample/S2.off'
+    file_path = 'Non-rigidSample/S0.off'
     vertices, faces = read_off(file_path)
-    visualize_shape(vertices, faces)
+    #test
+    
+    # visualize_shape(vertices, faces)
     points = multivector_collection(vertices, metric)
-    print(vertices)
-    print(points.CGA_to_standard())
+    vertices[0] =  torch.tensor([0,0,0])
+    t = torch.tensor([0]+[.1,0,0]+[0])
+    t2 = torch.tensor([0,0,0,1,0])
+    mvs = points.CGA
+
+    print(points.CGA_to_standard(mvs)) 
+    points.sct(t)
+    visualize_shape(points.tensor,faces)
+    visualize_shape(vertices,faces)
+    print(points.tensor - vertices)
 
 
 
